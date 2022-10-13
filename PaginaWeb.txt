@@ -1,0 +1,4 @@
+URL: https://ge5ffa1470b54ad-alertaparati.adb.us-phoenix-1.oraclecloudapps.com/ords/r/alerta-para-ti-atizapan/alertaparatiweb/
+
+usuario: gobierno_user
+contraseña: #Teamdinamita2022

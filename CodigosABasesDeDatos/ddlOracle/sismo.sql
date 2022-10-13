@@ -1,0 +1,24 @@
+CREATE TABLE  "SISMO" 
+   (	"ID" VARCHAR2(100) COLLATE "USING_NLS_COMP", 
+	"UBICACION" VARCHAR2(1000) COLLATE "USING_NLS_COMP", 
+	"MAGNITUD" NUMBER, 
+	"LONGITUD" NUMBER, 
+	"LATITUD" NUMBER, 
+	"FECHA_ACTUALIZACION" TIMESTAMP (6), 
+	"FECHA" TIMESTAMP (6), 
+	 CONSTRAINT "SISMO_PK" PRIMARY KEY ("ID")
+  USING INDEX  ENABLE
+   )  DEFAULT COLLATION "USING_NLS_COMP"
+/
+
+CREATE OR REPLACE EDITIONABLE TRIGGER  "SISMO_T1" 
+BEFORE
+insert or update or delete on "SISMO"
+for each row
+ WHEN (NEW.magnitud > 7) begin
+send_push_notif(title => 'SISMO', message => 'sismo con magnitud de ' || :NEW.magnitud || ' detectado en ' || :NEW.ubicacion);
+end;
+
+/
+ALTER TRIGGER  "SISMO_T1" ENABLE
+/

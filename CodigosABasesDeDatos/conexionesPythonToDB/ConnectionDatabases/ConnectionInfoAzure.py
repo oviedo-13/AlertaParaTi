@@ -1,0 +1,5 @@
+server = 'alerta-para-ti.database.windows.net'
+database = 'alerta-para-ti'
+username = 'alerta-para-ti'
+password = '#teamdinamica2022'   
+driver= '{ODBC Driver 18 for SQL Server}'
