@@ -31,10 +31,10 @@ En el repositorio podrán encontrar todos los archivos que generamos para el pro
 
 ## Referencia a las API 
 
-#### Get all items
-
+#### Clima
+## Página
 ```http
-  GET /api/items
+  [[GET /api/items](https://open-meteo.com/en)](https://open-meteo.com/en)
 ```
 
 | Parameter | Type     | Description                |
