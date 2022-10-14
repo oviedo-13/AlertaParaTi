@@ -31,29 +31,23 @@ En el repositorio podrán encontrar todos los archivos que generamos para el pro
 
 ## Referencia a las API 
 
-#### Get all items
+### Clima
+Página web [Open-Meteo](https://open-meteo.com/en)
 
-```http
-  GET /api/items
-```
+Llamada [API clima](https://api.open-meteo.com/v1/forecast?latitude=19.56&longitude=-99.18&hourly=temperature_2m,rain)
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
+Llamada [API calidad del aire](https://air-quality-api.open-meteo.com/v1/air-quality?latitude=19.56&longitude=-99.18&hourly=carbon_monoxide,uv_index&timezone=auto)
 
-#### Get item
 
-```http
-  GET /api/items/${id}
-```
+### Sismos
+Página web [USGS](https://earthquake.usgs.gov/fdsnws/event/1/)
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
+Llamada [API sismos](https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2022-09-01&endtime=2022-10-01&latitude=19.5944359&longitude=-99.2257701&maxradiuskm=1000&minmagnitude=5&orderby=time)
 
-#### add(num1, num2)
+### Tráfico
+Página web [TomTom maps](https://developer.tomtom.com/)
 
-Takes two numbers and returns the sum.
+Llamada [API incidentes](https://api.tomtom.com/traffic/services/5/incidentDetails?key=Vb6ondp3xGc8STqcndUjrqJcoeKIPMxg&bbox=-99.336542,19.522352,-99.213403,19.613057&fields={incidents{type,geometry{type,coordinates},properties{id,iconCategory,startTime,endTime,from,to}}}&language=en-GB&t=1111&timeValidityFilter=present&categoryFilter=1,2,3,4,6,8,9,11,14)
 
 
 ## Autores
